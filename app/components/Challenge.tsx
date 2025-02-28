@@ -63,7 +63,7 @@ const Challenge: React.FC<ChallengeProps> = ({
         >
           <div className="flex flex-col w-full items-center justify-center">
             <p className={`truncate ${inter.className}`}>
-              DAY {challengeNumber}
+              DAY/JUZ&apos; {challengeNumber}
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@ const Challenge: React.FC<ChallengeProps> = ({
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/10 bg-opacity-50 z-10">
           <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-            <p>This challenge will be unlocked in {timeRemaining}</p>
+            <p>This quiz will be unlocked in {timeRemaining}</p>
             <button
               onClick={closePopup}
               className="mt-4 px-4 py-2 bg-[#3f7d76] text-white rounded"

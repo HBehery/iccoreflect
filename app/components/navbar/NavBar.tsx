@@ -20,10 +20,10 @@ const NavBar = () => {
         </Link>
         <div className="hidden md:flex space-x-8 transition-all duration-300 text-gray-800 font-medium">
           <Link
-            href="/challenges"
+            href="/quizzes"
             className="hover:text-[#3f7d76] hover:underline hover:underline-offset-4 hover:decoration-[#3f7d76]"
           >
-            Challenges
+            Quizzes
           </Link>
           <Link
             href="/leaderboard"
@@ -105,10 +105,10 @@ const NavBar = () => {
             <nav className="flex flex-col space-y-4 ">
               <div className="flex flex-col space-y-4 pl-5 pr-3">
                 <Link
-                  href="/challenges"
+                  href="/quizzes"
                   className="font-medium hover:text-[#dfdfdf]"
                 >
-                  Challenges
+                  Quizzes
                 </Link>
                 <hr className="border-t border-white" />
                 <Link

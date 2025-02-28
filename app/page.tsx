@@ -6,8 +6,8 @@ export default function Home() {
       </h1>
       <p className="text-lg">
         Please proceed to the{" "}
-        <a className="underline " href="/challenges">
-          challenges
+        <a className="underline " href="/quizzes">
+          quizzes
         </a>{" "}
         page
       </p>
