@@ -18,18 +18,12 @@ const NavBar = () => {
         <Link href="/" className="flex items-center pl-3 lg:pl-9">
           <Image src="/logo.svg" alt="ICCO Logo" width={250} height={250} />
         </Link>
-        <div className="hidden md:flex space-x-4 transition-all duration-300 text-gray-800 font-medium">
+        <div className="hidden md:flex space-x-8 transition-all duration-300 text-gray-800 font-medium">
           <Link
             href="/challenges"
             className="hover:text-[#3f7d76] hover:underline hover:underline-offset-4 hover:decoration-[#3f7d76]"
           >
             Challenges
-          </Link>
-          <Link
-            href="/scores"
-            className="hover:text-[#3f7d76] hover:underline hover:underline-offset-4 hover:decoration-[#3f7d76]"
-          >
-            Your Scores
           </Link>
           <Link
             href="/leaderboard"
@@ -118,18 +112,12 @@ const NavBar = () => {
                 </Link>
                 <hr className="border-t border-white" />
                 <Link
-                  href="/scores"
-                  className="font-medium hover:text-[#dfdfdf]"
-                >
-                  Your Scores
-                </Link>
-                <hr className="border-t border-white" />
-                <Link
                   href="/leaderboard"
                   className="font-medium hover:text-[#dfdfdf]"
                 >
                   Leaderboard
                 </Link>
+                <hr className="border-t border-white" />
               </div>
             </nav>
             <div className="flex flex-col mx-24 text-center py-8">
