@@ -19,12 +19,14 @@ const Challenge: React.FC<ChallengeProps> = ({
   const [isLocked, setIsLocked] = useState(true);
   const [timeRemaining, setTimeRemaining] = useState("");
   const [showPopup, setShowPopup] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
       const release = new Date(releaseDate);
       const seconds = differenceInSeconds(release, now);
+      setIsLoading(false);
       if (seconds <= 0) {
         setIsLocked(false);
         clearInterval(interval);
@@ -39,6 +41,7 @@ const Challenge: React.FC<ChallengeProps> = ({
   }, [releaseDate]);
 
   const handleClick = () => {
+    if (isLoading) return;
     if (isLocked) {
       setShowPopup(true);
     } else {
@@ -58,8 +61,10 @@ const Challenge: React.FC<ChallengeProps> = ({
         }`}
       >
         <div
-          onClick={handleClick}
-          className={`flex w-[98%] h-[97%] justify-center items-center px-32 py-24 rounded-[8px] cursor-pointer bg-radial-[at_30%_70%] from-white to-[#fafafa] to-99% hover:bg-radial-[at_10%_10%] hover:from-gray-50 hover:to-white transition-colors  duration-300 `}
+          onClick={isLoading ? undefined : handleClick}
+          className={`flex w-[98%] h-[97%] justify-center items-center px-32 py-24 rounded-[8px] ${
+            isLoading ? "cursor-not-allowed" : "cursor-pointer"
+          } bg-radial-[at_30%_70%] from-white to-[#fafafa] to-99% hover:bg-radial-[at_10%_10%] hover:from-gray-50 hover:to-white transition-colors  duration-300 `}
         >
           <div className="flex flex-col w-full items-center justify-center">
             <p className={`truncate ${inter.className}`}>
