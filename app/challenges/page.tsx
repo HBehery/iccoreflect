@@ -40,7 +40,7 @@ const challengeLinks: { [key: number]: string } = {
 export default function ChallengePage() {
   const challenges = Array.from({ length: 30 }, (_, i) => ({
     challengeNumber: i + 1,
-    releaseDate: new Date(2025, 1, 28 + i, 19).toISOString(),
+    releaseDate: new Date(2025, 1, 28 + i, 15).toISOString(),
     redirectUrl: challengeLinks[i + 1],
   }));
 
