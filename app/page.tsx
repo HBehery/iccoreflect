@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <div className="flex flex-col no-doc-scroll items-center justify-top text-center my-48 xl:my-24 h-[90vh] gap-16 md:gap-24 font-[family-name:var(--font-geist-sans)] bg-no-repeat">
-      <div className="flex justify-center z-[-1] w-[75%] sm:w-[50%] overflow-hidden">
+    <div className="flex flex-col no-doc-scroll items-center justify-center text-center h-[90vh] gap-16 md:gap-24 font-[family-name:var(--font-geist-sans)] bg-no-repeat">
+      <div className="flex justify-center z-[-1] w-[75%] sm:w-[50%]">
         <img src="/title.png" alt="Title" />
       </div>
       <div className="flex flex-col items-center justify-center px-12 sm:px-20">
@@ -15,6 +15,9 @@ export default function Home() {
           </a>{" "}
           page
         </p>
+      </div>
+      <div className="absolute bottom-0 z-[-1] overflow-hidden w-auto h-auto hidden max-lg:inline">
+        <img src="/bottom.png" alt="Bottom Footer" />
       </div>
     </div>
   );
