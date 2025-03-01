@@ -56,17 +56,17 @@ const Challenge: React.FC<ChallengeProps> = ({
   return (
     <div className="flex flex-col items-center justify-center">
       <div
-        className={`flex justify-center items-center rounded-[10px] transition-colors text-[#3f7d76] hover:text-black ${
+        className={`flex justify-center items-center rounded-[10px] transition-colors text-[#756734] hover:text-black ${
           isLocked
             ? "bg-gray-300 hover:bg-gray-400"
-            : "text-black bg-[#3f7d76]/50 hover:bg-[#3f7d76]/80"
+            : "text-black bg-[#edca48]/50 hover:bg-[#edca48]/80"
         }`}
       >
         <div
           onClick={isLoading ? undefined : handleClick}
           className={`flex w-[98%] h-[97%] justify-center items-center px-32 py-24 rounded-[8px] ${
             isLoading ? "cursor-not-allowed" : "cursor-pointer"
-          } bg-radial-[at_30%_70%] from-white to-[#fafafa] to-99% hover:bg-radial-[at_10%_10%] hover:from-gray-50 hover:to-white `}
+          } bg-radial-[at_10%_10%] from-gray-50 to-white to-99% hover:from-white hover:to-[#f7f7f7] `}
         >
           <div className="flex flex-col w-full items-center justify-center">
             <p className={`truncate ${inter.className}`}>

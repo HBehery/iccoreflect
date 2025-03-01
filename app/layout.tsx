@@ -33,7 +33,7 @@ export default function RootLayout({
           <img src="/leftframe.png" alt="Left Frame" />
         </div>
         <div className="absolute top-[84px] right-0 z-[-1] overflow-hidden w-auto h-auto">
-          <img src="/rightframe.png" alt="Left Frame" />
+          <img src="/rightframe.png" alt="Right Frame" />
         </div>
         {children}
       </body>
