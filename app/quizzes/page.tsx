@@ -51,9 +51,12 @@ export default function ChallengePage() {
           <React.Fragment key={challenge.challengeNumber}>
             {index % 10 === 0 && (
               <div
-                className={`col-span-full text-center font-bold text-black text-2xl my-4 ${inter.className}`}
+                className={`col-span-full text-center font-bold text-black text-3xl my-4 ${inter.className}`}
               >
-                Competition {Math.floor(index / 10) + 1}
+                Round #{Math.floor(index / 10) + 1}
+                <p className="text-[#3f7d76]">
+                  Days {index + 1} -{index + 10}
+                </p>
               </div>
             )}
             <Challenge
