@@ -39,10 +39,11 @@ const challengeLinks: { [key: number]: string } = {
 
 export default function ChallengePage() {
   const challenges = Array.from({ length: 30 }, (_, i) => {
-    const releaseDate = new Date(2025, 2, i, 16);
+    const releaseDate = new Date(2025, 2, i, 11);
     const estReleaseDate = new Date(
       releaseDate.toLocaleString("en-US", { timeZone: "America/New_York" })
     );
+    console.log(estReleaseDate);
     return {
       challengeNumber: i + 1,
       releaseDate: estReleaseDate.toISOString(),
