@@ -38,11 +38,17 @@ const challengeLinks: { [key: number]: string } = {
 };
 
 export default function ChallengePage() {
-  const challenges = Array.from({ length: 30 }, (_, i) => ({
-    challengeNumber: i + 1,
-    releaseDate: new Date(2025, 1, 28 + i, 16).toISOString(),
-    redirectUrl: challengeLinks[i + 1],
-  }));
+  const challenges = Array.from({ length: 30 }, (_, i) => {
+    const releaseDate = new Date(2025, 1, 28 + i, 16);
+    const estReleaseDate = new Date(
+      releaseDate.toLocaleString("en-US", { timeZone: "America/New_York" })
+    );
+    return {
+      challengeNumber: i + 1,
+      releaseDate: estReleaseDate.toISOString(),
+      redirectUrl: challengeLinks[i + 1],
+    };
+  });
 
   return (
     <div className="flex flex-col items-center justify-center my-32 h-full">
