@@ -23,7 +23,9 @@ const Challenge: React.FC<ChallengeProps> = ({
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const now = new Date();
+      const now = new Date().toLocaleString("en-US", {
+        timeZone: "America/New_York",
+      });
       const release = new Date(releaseDate);
       const seconds = differenceInSeconds(release, now);
       setIsLoading(false);
