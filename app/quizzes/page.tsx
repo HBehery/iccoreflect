@@ -51,7 +51,7 @@ export default function ChallengePage() {
 
   return (
     <div className="flex flex-col items-center justify-center my-32 h-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mx-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 mx-16 min-w-[80%] max-[790px]:min-w-[90%] lg:min-w-[50%]">
         {challenges.map((challenge, index) => (
           <React.Fragment key={challenge.challengeNumber}>
             {index % 10 === 0 && (
@@ -71,6 +71,12 @@ export default function ChallengePage() {
             />
           </React.Fragment>
         ))}
+      </div>
+      <div className="absolute top-[1350px] xl:top-[1100px] left-[-250] z-[-1] overflow-hidden w-auto h-auto hidden md:inline">
+        <img src="/crescent.png" alt="Crescent" />
+      </div>
+      <div className="absolute top-[3050px] xl:top-[2500px] right-[-150] z-[-1] no-doc-scroll-x w-[800] hidden md:inline">
+        <img src="/stars.png" alt="Crescent" />
       </div>
     </div>
   );

@@ -29,13 +29,6 @@ const Challenge: React.FC<ChallengeProps> = ({
       const release = new Date(releaseDate);
       const seconds = differenceInSeconds(release, now);
 
-      if (challengeNumber < 4) {
-        console.log(challengeNumber);
-        console.log(release);
-        console.log(now);
-        console.log(seconds);
-      }
-
       setIsLoading(false);
       if (seconds <= 0) {
         setIsLocked(false);
