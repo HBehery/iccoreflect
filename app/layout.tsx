@@ -29,10 +29,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/background.png')] bg-repeat text-black`}
       >
         <NavBar />
-        <div className="absolute top-[84px] left-0 overflow-hidden w-auto h-auto">
+        <div className="absolute top-[84px] left-0 z-[-1] overflow-hidden w-auto h-auto">
           <img src="/leftframe.png" alt="Left Frame" />
         </div>
-        <div className="absolute top-[84px] right-0 overflow-hidden w-auto h-auto">
+        <div className="absolute top-[84px] right-0 z-[-1] overflow-hidden w-auto h-auto">
           <img src="/rightframe.png" alt="Left Frame" />
         </div>
         {children}
