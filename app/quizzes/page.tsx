@@ -40,7 +40,7 @@ const challengeLinks: { [key: number]: string } = {
 export default function ChallengePage() {
   const challenges = Array.from({ length: 30 }, (_, i) => ({
     challengeNumber: i + 1,
-    releaseDate: new Date(2025, 1, 28 + i, 15).toISOString(),
+    releaseDate: new Date(2025, 1, 28 + i, 16).toISOString(),
     redirectUrl: challengeLinks[i + 1],
   }));
 
@@ -51,7 +51,7 @@ export default function ChallengePage() {
           <React.Fragment key={challenge.challengeNumber}>
             {index % 10 === 0 && (
               <div
-                className={`col-span-full text-center font-bold text-[#316b64] text-2xl my-4 ${inter.className}`}
+                className={`col-span-full text-center font-bold text-black text-2xl my-4 ${inter.className}`}
               >
                 Competition {Math.floor(index / 10) + 1}
               </div>

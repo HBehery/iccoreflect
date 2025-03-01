@@ -56,15 +56,17 @@ const Challenge: React.FC<ChallengeProps> = ({
   return (
     <div className="flex flex-col items-center justify-center">
       <div
-        className={`flex justify-center items-center rounded-[10px] ${
-          isLocked ? "bg-gray-300" : "bg-[#3f7d76]/50"
+        className={`flex justify-center items-center rounded-[10px] transition-colors text-[#3f7d76] hover:text-black ${
+          isLocked
+            ? "bg-gray-300 hover:bg-gray-400"
+            : "text-black bg-[#3f7d76]/50 hover:bg-[#3f7d76]/80"
         }`}
       >
         <div
           onClick={isLoading ? undefined : handleClick}
           className={`flex w-[98%] h-[97%] justify-center items-center px-32 py-24 rounded-[8px] ${
             isLoading ? "cursor-not-allowed" : "cursor-pointer"
-          } bg-radial-[at_30%_70%] from-white to-[#fafafa] to-99% hover:bg-radial-[at_10%_10%] hover:from-gray-50 hover:to-white transition-colors  duration-300 `}
+          } bg-radial-[at_30%_70%] from-white to-[#fafafa] to-99% hover:bg-radial-[at_10%_10%] hover:from-gray-50 hover:to-white `}
         >
           <div className="flex flex-col w-full items-center justify-center">
             <p className={`truncate ${inter.className}`}>
@@ -76,7 +78,7 @@ const Challenge: React.FC<ChallengeProps> = ({
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/10 bg-opacity-50 z-10">
           <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-            <p>This quiz will be unlocked in {timeRemaining} at 3PM EST</p>
+            <p>This quiz will be unlocked in {timeRemaining} at 4PM EST</p>
             <button
               onClick={closePopup}
               className="mt-4 px-4 py-2 bg-[#3f7d76] text-white rounded"
