@@ -28,6 +28,7 @@ const Challenge: React.FC<ChallengeProps> = ({
       });
       const release = new Date(releaseDate);
       const seconds = differenceInSeconds(release, now);
+      console.log(seconds);
       setIsLoading(false);
       if (seconds <= 0) {
         setIsLocked(false);

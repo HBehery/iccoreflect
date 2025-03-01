@@ -42,7 +42,6 @@ export default function ChallengePage() {
     const releaseDate = new Date(2025, 2, i, 16).toLocaleString("en-US", {
       timeZone: "America/New_York",
     });
-    console.log(releaseDate);
     return {
       challengeNumber: i + 1,
       releaseDate: releaseDate,
