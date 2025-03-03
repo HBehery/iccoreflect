@@ -39,7 +39,7 @@ const challengeLinks: { [key: number]: string } = {
 
 export default function ChallengePage() {
   const challenges = Array.from({ length: 30 }, (_, i) => {
-    const releaseDate = new Date(2025, 2, i, 21).toLocaleString("en-US", {
+    const releaseDate = new Date(2025, 2, i, 22).toLocaleString("en-US", {
       timeZone: "America/New_York",
     });
     return {
