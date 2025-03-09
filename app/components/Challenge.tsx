@@ -84,7 +84,7 @@ const Challenge: React.FC<ChallengeProps> = ({
             <p>This quiz will be unlocked in {timeRemaining} at 5PM EST</p>
             <button
               onClick={closePopup}
-              className="mt-4 px-4 py-2 bg-[#3f7d76] text-white rounded"
+              className="mt-4 px-4 py-2 bg-[#3f7d76] text-white rounded-lg cursor-pointer hover:bg-white hover:text-[#3f7d76]  border-2 border-[#3f7d76] transition-colors duration-300"
             >
               Close
             </button>
