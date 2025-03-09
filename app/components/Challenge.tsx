@@ -81,7 +81,7 @@ const Challenge: React.FC<ChallengeProps> = ({
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/10 bg-opacity-50 z-10">
           <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-            <p>This quiz will be unlocked in {timeRemaining} at 5PM EST</p>
+            <p>This quiz will be unlocked in {timeRemaining} at 6PM EST</p>
             <button
               onClick={closePopup}
               className="mt-4 px-4 py-2 bg-[#3f7d76] text-white rounded"
