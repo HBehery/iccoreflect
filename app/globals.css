@@ -8,3 +8,7 @@
 :root:has(.no-doc-scroll) {
   overflow: hidden;
 }
+
+:root:has(.no-x-scroll) {
+  overflow-x: hidden;
+}
