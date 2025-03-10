@@ -16,7 +16,7 @@ const challengeLinks: { [key: number]: string } = {
   9: "https://forms.gle/FrLywEa3dpyuyJLb7",
   10: "https://forms.gle/JPCAdUKwFaySECyQ8",
   11: "https://forms.gle/aS6meeycieHtMryg6",
-  12: "",
+  12: "https://forms.gle/hfxVS74QJJv7jdmY6",
   13: "",
   14: "",
   15: "",
