@@ -63,10 +63,6 @@ export async function GET() {
 
     return NextResponse.json({ data: rankedData });
   } catch (error) {
-    console.log(error);
-    return NextResponse.json(
-      { error: "Failed to fetch leaderboard data" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: error }, { status: 500 });
   }
 }
