@@ -29,12 +29,12 @@ const challengeLinks: { [key: number]: string } = {
   22: "https://forms.gle/643ZoPqF3RdkCwhu8",
   23: "https://forms.gle/H1YB9jcecSJ8RSq6A",
   24: "https://forms.gle/eueTH4oXqxg7ENSW6",
-  25: "",
-  26: "",
-  27: "",
-  28: "",
-  29: "",
-  30: "",
+  25: "https://forms.gle/weHBWpXY24U4kMuT7",
+  26: "https://forms.gle/XPVtXMYZNXLbSjCE8",
+  27: "https://forms.gle/LkLE221PqsKLbUrF7",
+  28: "https://forms.gle/hJBUB2q8QxxX6Q2v6",
+  29: "https://forms.gle/7hvzpx7ArrgzP4zVA",
+  30: "https://forms.gle/uKaY8iBmS4yyVkDL6",
 };
 
 export default function ChallengePage() {
