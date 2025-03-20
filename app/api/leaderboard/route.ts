@@ -5,8 +5,10 @@ import { loadEnvConfig } from "@next/env";
 const projectDir = process.cwd();
 loadEnvConfig(projectDir);
 
-export async function GET() {
+export async function POST(request: Request) {
   try {
+    const { round } = await request.json();
+
     if (
       !process.env.GOOGLE_PRIVATE_KEY ||
       !process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ||
@@ -43,7 +45,12 @@ export async function GET() {
       .slice(1)
       .map((row: (string | number)[]) => ({
         name: typeof row[1] === "string" ? row[1] : "N/A",
-        score: Number(row[32]),
+        score:
+          round == 1
+            ? Number(row[32])
+            : round == 2
+            ? Number(row[33])
+            : Number(row[34]),
       }))
       .filter((entry: { name: string; score: number }) => entry.name !== "N/A");
 
