@@ -83,15 +83,15 @@ export default function LeaderboardTable({
 
   return (
     <div
-      className={`${
+      className={` justify-self-center ${
         round == 3
-          ? "2xl:order-2 min-[940px]:order-1 min-[940px]:col-span-2 2xl:col-span-1 justify-self-center"
+          ? "2xl:order-2 min-[940px]:order-1 min-[940px]:col-span-2 2xl:col-span-1"
           : round == 2
           ? "2xl:order-3 min-[940px]:order-3 pt-12"
           : "2xl:order-1 min-[940px]:order-2 pt-12"
       }`}
     >
-      <p className="text-md md:text-xl">
+      <p className="text-md md:text-xl text-center">
         {round == 3 ? `Round ${round} (Current)` : `Round ${round}`}
       </p>
       <div className="flex flex-col text-center items-center px-4 min-[500px]:px-12 pb-12 py-4 min-w-fit overflow-auto">
