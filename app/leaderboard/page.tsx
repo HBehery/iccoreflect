@@ -12,7 +12,7 @@ export default function Leaderboard() {
         Top 10 Players From Each Round
       </p>
 
-      <div className="grid grid-cols-1 min-[940px]:grid-cols-2 2xl:grid-cols-3 place-items-center">
+      <div className="grid grid-cols-1 min-[940px]:grid-cols-2 2xl:grid-cols-3 place-items-top">
         <LeaderboardTable setLoadState={setLoading} round={3} />
 
         <LeaderboardTable setLoadState={setLoading} round={2} />

@@ -5,6 +5,27 @@ import { loadEnvConfig } from "@next/env";
 const projectDir = process.cwd();
 loadEnvConfig(projectDir);
 
+function getTopWinners(
+  rows: (string | number)[][],
+  scoreColumnIndex: number,
+  topCount: number = 3,
+  excludeNames: string[] = []
+): string[] {
+  const sortedData = rows
+    .slice(1)
+    .map((row: (string | number)[]) => ({
+      name: typeof row[1] === "string" ? row[1] : "N/A",
+      score: Number(row[scoreColumnIndex]),
+    }))
+    .filter(
+      (entry: { name: string; score: number }) =>
+        entry.name !== "N/A" && !excludeNames.includes(entry.name)
+    )
+    .sort((a, b) => b.score - a.score);
+
+  return sortedData.slice(0, topCount).map((item) => item.name);
+}
+
 export async function POST(request: Request) {
   try {
     const { round } = await request.json();
@@ -41,6 +62,22 @@ export async function POST(request: Request) {
       return NextResponse.json({ data: [] });
     }
 
+    let previousTopWinners: string[] = [];
+
+    if (round >= 2) {
+      if (round === 2) {
+        const round1Winners = getTopWinners(rows, 32);
+        previousTopWinners = round1Winners;
+      } else if (round === 3) {
+        const round1Winners = getTopWinners(rows, 32);
+        const round2Winners = getTopWinners(rows, 33, 3, round1Winners);
+
+        previousTopWinners = [...round1Winners, ...round2Winners];
+      }
+    }
+
+    console.log("Previous top winners", previousTopWinners);
+
     const processedData = rows
       .slice(1)
       .map((row: (string | number)[]) => ({
@@ -51,6 +88,8 @@ export async function POST(request: Request) {
             : round == 2
             ? Number(row[33])
             : Number(row[34]),
+        isPreviousTopWinner:
+          round >= 2 && previousTopWinners.includes(row[1] as string),
       }))
       .filter((entry: { name: string; score: number }) => entry.name !== "N/A");
 
@@ -61,12 +100,24 @@ export async function POST(request: Request) {
       ) => b.score - a.score
     );
 
-    const rankedData = processedData.map(
-      (entry: { name: string; score: number }, index: number) => ({
-        ...entry,
-        rank: index + 1,
-      })
+    const regularPlayers = processedData.filter(
+      (entry) => !entry.isPreviousTopWinner
     );
+    const previousTopWinnerPlayers = processedData.filter(
+      (entry) => entry.isPreviousTopWinner
+    );
+
+    const rankedRegularPlayers = regularPlayers.map((entry, index) => ({
+      ...entry,
+      rank: index + 1,
+    }));
+
+    const rankedPreviousTopWinners = previousTopWinnerPlayers.map((entry) => ({
+      ...entry,
+      rank: "-",
+    }));
+
+    const rankedData = [...rankedRegularPlayers, ...rankedPreviousTopWinners];
 
     return NextResponse.json({ data: rankedData });
   } catch (error) {

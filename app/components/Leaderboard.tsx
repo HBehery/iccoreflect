@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 interface LeaderboardEntry {
   name: string;
   score: number;
-  rank: number;
+  rank: number | string;
 }
 
 interface LeaderboardTableProps {
@@ -74,14 +74,21 @@ export default function LeaderboardTable({
     );
   }
 
+  const rankedEntries = leaderboardData
+    .filter((entry) => entry.rank !== "-")
+    .sort((a, b) => (a.rank as number) - (b.rank as number))
+    .slice(0, 10);
+  const unrankedEntries = leaderboardData.filter((entry) => entry.rank === "-");
+  const displayEntries = [...rankedEntries, ...unrankedEntries];
+
   return (
     <div
       className={`${
         round == 3
           ? "2xl:order-2 min-[940px]:order-1 min-[940px]:col-span-2 2xl:col-span-1 justify-self-center"
           : round == 2
-          ? "2xl:order-3 min-[940px]:order-3"
-          : "2xl:order-1 min-[940px]:order-2"
+          ? "2xl:order-3 min-[940px]:order-3 pt-12"
+          : "2xl:order-1 min-[940px]:order-2 pt-12"
       }`}
     >
       <p className="text-md md:text-xl">
@@ -93,7 +100,7 @@ export default function LeaderboardTable({
             round == 1 || round == 2 ? "bg-[#cecece]" : "bg-[#f3e6ae]"
           } p-2 rounded-xl`}
         >
-          <table className="w-full text-blac bg-white  transition-all rounded-sm overflow-x-auto whitespace-nowrap ">
+          <table className="w-full text-blac bg-white transition-all rounded-sm overflow-x-auto whitespace-nowrap ">
             <thead className="bg-gray-100 text-gray-700">
               <tr>
                 <th className="min-[500px]:px-6 px-1 py-3 text-sm font-semibold uppercase">
@@ -108,14 +115,14 @@ export default function LeaderboardTable({
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              {leaderboardData.slice(0, 10).map((entry) => (
+              {displayEntries.map((entry) => (
                 <tr
-                  key={entry.rank}
+                  key={entry.name}
                   className={`
                   ${entry.rank === 1 ? "bg-yellow-50 font-bold" : ""}
                   ${entry.rank === 2 ? "bg-gray-200 font-bold" : ""}
-                  ${entry.rank === 3 ? "bg-orange-200  font-bold" : ""}
-                
+                  ${entry.rank === 3 ? "bg-orange-200 font-bold" : ""}
+                  ${entry.rank === "-" ? "bg-gray-50" : ""}
                 `}
                 >
                   <td className="min-[500px]:px-6 px-1 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
