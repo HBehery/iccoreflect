@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/background.png')] bg-repeat text-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/background.png')] bg-repeat text-black no-x-scroll`}
       >
         <NavBar />
         <div className="absolute top-[84px] left-0 z-[-1] overflow-hidden w-auto h-auto">
