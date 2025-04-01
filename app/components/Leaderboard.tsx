@@ -91,9 +91,7 @@ export default function LeaderboardTable({
           : "2xl:order-1 min-[940px]:order-2 pt-12"
       }`}
     >
-      <p className="text-md md:text-xl text-center">
-        {round == 3 ? `Round ${round} (Current)` : `Round ${round}`}
-      </p>
+      <p className="text-md md:text-xl text-center">{`Round ${round}`}</p>
       <div className="flex flex-col text-center items-center px-4 min-[500px]:px-12 pb-12 py-4 min-w-fit overflow-auto">
         <div
           className={`flex flex-col items-center min-w-fit sm:w-[90%] md:w-[80%] xl:w-[60%] text-sm lg:text-[16px] ${
