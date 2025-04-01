@@ -76,8 +76,6 @@ export async function POST(request: Request) {
       }
     }
 
-    console.log("Previous top winners", previousTopWinners);
-
     const processedData = rows
       .slice(1)
       .map((row: (string | number)[]) => ({
