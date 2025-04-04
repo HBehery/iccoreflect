@@ -1,36 +1,11 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## What is ICCO Reflect? ⭐
 
-## Getting Started
+ICCO Reflect is the annual trivia competition hosted by the Islamic Community Centre of Ontario (ICCO) to **2500+ centre attendees**, in Mississauga, Canada. As the centre was experiencing a bottleneck in how many players they could manually manage the data for, I built this website end-to-end to create a **scalable** and **seamless** user experience. <br/>Built in NextJS, the website uses Google Sheets as its primary CMS, where all the user data is scored for each quiz. This design decision was made in favour of **scalability** and **ease of use**, as opposed to building a entire user auth system from the ground up (like the one I built for [Reality Quest](https://github.com/HBehery/realityquest) using NextAuth), along with a quiz microservice. <br/>Feel free to visit the website at https://iccoramadanreflect.ca/!
 
-First, run the development server:
+## Rules/Logistics 📋
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+By navigating to the quizzes section on the website, you will be taken to a portal for each trivia quiz of the day while the compeitition ran. Additionally, you can also visit the leaderboard where the top 10 players from each round are displayed (note that past winners from each round were not considered for standings in the following rounds).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Analytics: 140 Total Unique Players Registered, ~4000 page visits 📈
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Homepage Preview](public/homepage.png)

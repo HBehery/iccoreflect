@@ -73,10 +73,10 @@ export default function ChallengePage() {
         ))}
       </div>
       <div className="absolute top-[1350px] xl:top-[1100px] left-[-250] z-[-1] overflow-hidden w-auto h-auto hidden md:inline">
-        <img src="/crescent.png" alt="Crescent" />
+        <img src="/images/quizzes/crescent.png" alt="Crescent" />
       </div>
       <div className="absolute top-[3050px] xl:top-[2500px] right-[-150] z-[-1] no-doc-scroll-x w-[800] hidden md:inline">
-        <img src="/stars.png" alt="Crescent" />
+        <img src="/images/quizzes/stars.png" alt="Crescent" />
       </div>
     </div>
   );

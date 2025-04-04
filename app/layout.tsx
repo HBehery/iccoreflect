@@ -27,14 +27,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/background.png')] bg-repeat text-black no-x-scroll`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/images/global/background.png')] bg-repeat text-black no-x-scroll`}
       >
         <NavBar />
         <div className="absolute top-[84px] left-0 z-[-1] overflow-hidden w-auto h-auto">
-          <img src="/leftframe.png" className="-mb-[50%]" alt="Left Frame" />
+          <img
+            src="/images/global/leftframe.png"
+            className="-mb-[50%]"
+            alt="Left Frame"
+          />
         </div>
         <div className="absolute top-[84px] right-0 z-[-1] overflow-hidden w-auto h-auto">
-          <img src="/rightframe.png" className="-mb-[50%]" alt="Right Frame" />
+          <img
+            src="/images/global/rightframe.png"
+            className="-mb-[50%]"
+            alt="Right Frame"
+          />
         </div>
         {children}
         <Analytics />

@@ -24,7 +24,7 @@ export default function Leaderboard() {
         } `}
       >
         <img
-          src="/bottom.png"
+          src="/images/global/bottom.png"
           alt="Bottom Footer"
           className="w-full mt-[-75%]"
         />
